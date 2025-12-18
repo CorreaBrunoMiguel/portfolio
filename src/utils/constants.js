@@ -2,6 +2,7 @@ export const PERSONAL_INFO = {
   name: "Bruno Miguel Corrêa",
   title: "Full-Stack Web Developer Junior & Data Analyst Junior ",
   email: "correabrunomiguel@gmail.com",
+  location: "Gov. Celso Ramos, SC",
   tagline:
     "Construindo aplicações completas e revelando padrões ocultos com inteligência artificial.",
   bio: [
