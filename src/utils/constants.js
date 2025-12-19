@@ -26,7 +26,8 @@ export const STATS = [
 
 export const ABOUT_STATS = [
   { label: "Clientes Satisfeitos", value: "2" },
-  { label: "Códigos 'Comitados'", value: "100+" }
+  { label: "Códigos Comitados", value: "100+" },
+  { label: "Pensar em Algo", value: "1000+" }
 ];
 
 export const NAV_LINKS = [

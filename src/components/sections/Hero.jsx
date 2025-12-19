@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { ChevronDown, Star } from "lucide-react";
+import { ChevronDown, Icon, Star } from "lucide-react";
 import {
   SiReact,
   SiTailwindcss,
@@ -17,9 +17,11 @@ import FadeIn from "../animations/FadeIn";
 import RadialGradientBackground from "../backgrounds/RadialGradientBackground";
 
 const Hero = () => {
+  const techIcons = [SiReact, SiSpringboot, SiNodedotjs, SiTailwindcss, SiMongodb, SiDocker];
+
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-black">
-      {/* <RadialGradientBackground variant="hero" /> */}
+      <RadialGradientBackground variant="hero" />
 
       {/* Content Container */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
@@ -79,7 +81,7 @@ const Hero = () => {
           {/* Coluna da Direita - Imagem */}
           <FadeIn delay={200}>
             <div className="relative">
-              <div className="relative overflow-hidden rounded-2xl aspect-4/5 max-w-125 ml-auto group">
+              <div className="relative overflow-hidden rounded-2xl aspect-4/5 max-w-125 ml-auto group w-full sm:max-w-125">
                 <div className="absolute inset-0 rounded-2xl overflow-hidden">
                   <div className="absolute -inset-0.5 bg-linear-to-r from-primary/20 via-primary/10 to-primary animate-spin rounded-2xl"></div>
                 </div>
@@ -88,7 +90,7 @@ const Hero = () => {
                 <div className="relative rounded-2xl overflow-hidden -m-0\.25 h-[calc(100%-2px)]">
                   <img
                     src="/bruno-portrait.png"
-                    alt="Desenvolvedor trabalhando"
+                    alt="Retrato profissional de Bruno, desenvolvedor front-end"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -96,30 +98,15 @@ const Hero = () => {
                 {/* Tecnologias - Logo */}
                 <div className="absolute bottom-6 left-6 z-20">
                   <FadeIn delay={500}>
-                    <div className="flex items-center gap-4 bg-black/40 backdrop-blur-sm border border-white/10 rounded-full px-6 py-3 ">
-                      <div className="w-6 h-6 flex items-center justify-center hover:scale-110 transition-all duration-300">
-                        <SiReact className="w-full h-full text-primary" />
-                      </div>
-
-                      <div className="w-6 h-6 flex items-center justify-center hover:scale-110 transition-all duration-300">
-                        <SiSpringboot className="w-full h-full text-primary" />
-                      </div>
-
-                      <div className="w-6 h-6 flex items-center justify-center hover:scale-110 transition-all duration-300">
-                        <SiNodedotjs className="w-full h-full text-primary" />
-                      </div>
-
-                      <div className="w-6 h-6 flex items-center justify-center hover:scale-110 transition-all duration-300">
-                        <SiTailwindcss className="w-full h-full text-primary" />
-                      </div>
-
-                      <div className="w-6 h-6 flex items-center justify-center hover:scale-110 transition-all duration-300">
-                        <SiMongodb className="w-full h-full text-primary" />
-                      </div>
-
-                      <div className="w-6 h-6 flex items-center justify-center hover:scale-110 transition-all duration-300">
-                        <SiDocker className="w-full h-full text-primary" />
-                      </div>
+                    <div className="flex items-center gap-4 bg-black/40 backdrop-blur-sm border border-white/10 rounded-full px-6 py-3">
+                      {techIcons.map((Icon, idx) => (
+                        <div
+                          key={idx}
+                          className="w-6 h-6 flex items-center justify-center hover:scale-110 transition-all duration-300"
+                        >
+                          <Icon className="w-full h-full text-primary" />
+                        </div>
+                      ))}
                     </div>
                   </FadeIn>
                 </div>
